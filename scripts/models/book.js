@@ -8,7 +8,6 @@ ENV.isProduction = window.location.protocol === 'https:';
 ENV.productionApiUrl = 'https://lm-hm-booklist.herokuapp.com';
 ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
-console.log(`${ENV.apiUrl}/api/v1/books`);
 
 (function(module) {
   function errorCallback(err) {
@@ -28,29 +27,22 @@ console.log(`${ENV.apiUrl}/api/v1/books`);
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
 
-  Book.loadOne = book => new Book(book);
+  // Book.loadOne = book => new Book(book);
 
-  Book.fetchAll = callback => {
-
+  Book.fetchAll = callback =>
     $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
+
+  Book.fetchOne = (id) => {
+    return $.getJSON(ENV.apiUrl + 'api/v1/books' + id)
+      .catch(err => console.error(err));
   };
 
-  Book.fetchOne = callback => {
-    $.get(`${ENV.apiUrl}/api/v1/books/`)
-    //need id appended to the string above
-      .then(Book.loadOne)
-
-      //what should you display
-      .then(callback)
-      .catch(errorCallback);
-  };
-
-  // Book.create = book =>
-  //   $.post(`${ENV.apiUrl}/api/v1/books/`)
-  //   .catc
+  Book.create = book =>
+    $.post(ENV.apiUrl + 'api/v1/books', book)
+      .catch(err => console.error(err));
 
   module.Book = Book;
 })(app);
