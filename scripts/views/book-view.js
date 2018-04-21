@@ -13,7 +13,7 @@ var app = app || {};
   bookView.oneBook = (bookdata) => {
     console.log('bookdata', bookdata);
     $('.container').hide();
-    $('.detail-view').show();
+    $('.detail-view').empty().show();
     let template = Handlebars.compile($('#show-one-template').text());
     // module.Book.map(book => $('.detail-view').append(template).toHtml());
     $('.detail-view').append(template(bookdata));

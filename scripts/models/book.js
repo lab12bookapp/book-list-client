@@ -40,6 +40,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
   Book.create = book =>
     $.post(ENV.apiUrl + '/api/v1/books', book)
+      .then(() => page('/'))
       .catch(err => console.error(err));
 
   module.Book = Book;

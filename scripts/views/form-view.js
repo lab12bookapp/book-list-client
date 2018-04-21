@@ -8,13 +8,17 @@ var app = app || {};
   formView.initIndexPage = function() {
     $('.container').hide();
     $('.form-view').show();
-    // $('.form-view').off().on('submit', 'form', (event) => {
-    //   event.preventDefault();
-    //   const title = $('.form-view').val();
-    //   app.Book.create({title}).then(page('/'));
-    //   $('#title').val('');
-    // });
-  };
-
+    $('#add-form').on('submit', function (event) {
+      event.preventDefault();
+      let book = {
+        title: event.target.title.value,
+        author: event.target.author.value,
+        isbn: event.target.isbn.value,
+        image_url: event.target.image_url.value,
+        description: event.target.description.value
+      }
+      module.Book.create(book);
+    })
+  }
   module.formView = formView;
 })(app);
