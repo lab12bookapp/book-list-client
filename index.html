@@ -25,6 +25,7 @@
           <p>{{author}}</p>
         </div>
       </div>
+      <button><a href=/books/{{book_id}}>view details</a></button>
     </li>
   </script>
 
@@ -49,6 +50,11 @@
       <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
       <h1>Code Fellows Books</h1>
     </div>
+    <div class="icon-menu">
+      <ul>
+        <li class="tab"><a href="/">View All Books</a></li>
+        <li class="tab"><a href="/new">Add A New Book</a></li>
+      </ul>
   </header>
   <main>
     <section class="error-view container">
@@ -61,6 +67,23 @@
         <ul id="book-list"></ul>
       </section>
     </section>
+
+    <section class="detail-view container">
+        <h2 class="view-title">Details</h2>
+    </section>
+
+    <section class="form-view container">
+        <h2 class="view-title">Form</h2>
+        <form>
+          <input type="text" id="title" placeholder="title"><br>
+          <input type="text" id="author" placeholder="author"><br>
+          <input type="text" id="img_url" placeholder="img_url"><br>
+          <input type="text" id="isbn" placeholder="isbn"><br>
+          <input type="text" id="description" placeholder="description"><br>
+        </form>
+    </section>
+
+
   </main>
   <footer>
     <aside class="social-links">

@@ -48,5 +48,9 @@ console.log(`${ENV.apiUrl}/api/v1/books`);
       .catch(errorCallback);
   };
 
+  // Book.create = book =>
+  //   $.post(`${ENV.apiUrl}/api/v1/books/`)
+  //   .catc
+
   module.Book = Book;
 })(app);
