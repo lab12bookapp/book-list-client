@@ -19,7 +19,11 @@
   <script type="text/x-handlebars-template" id="book-list-template">
     <li class="book-items" data-bookid={{book_id}}>
       <div class="book-container">
+<<<<<<< Updated upstream
         <img src={{image_url}}>
+=======
+        <img src={{image}}>
+>>>>>>> Stashed changes
         <div class="book-overlay">
           <h3>{{title}}</h3>
           <p>{{author}}</p>
@@ -29,6 +33,7 @@
     </li>
   </script>
 
+<<<<<<< Updated upstream
   <script type="text/x-handlebars-template" id="one-book-template">
     <li class="one-book-item" data-bookid={{book_id}}>
       <div class="one-book-container">
@@ -39,6 +44,15 @@
           <p>{{isbn}}</p>
           <p>{{description}}</p>
         </div>
+=======
+  <script type="text/x-handlebars-template" id="show-one-template">
+    <div data-bookid={{book_id}}>
+      <h1>{{title}}</h1>
+      <p>{{author}}</p>
+      <p>{{isbn}}</p>
+      <img src="{{image_url}}">
+      <p>{{description}}</p>
+>>>>>>> Stashed changes
       </div>
     </li>
   </script>
@@ -77,9 +91,10 @@
         <form>
           <input type="text" id="title" placeholder="title"><br>
           <input type="text" id="author" placeholder="author"><br>
-          <input type="text" id="img_url" placeholder="img_url"><br>
+          <input type="text" id="image_url" placeholder="image_url"><br>
           <input type="text" id="isbn" placeholder="isbn"><br>
           <input type="text" id="description" placeholder="description"><br>
+          <button>Submit</button>
         </form>
     </section>
 
