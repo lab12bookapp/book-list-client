@@ -1,7 +1,10 @@
 'use strict';
+
 var app = app || {};
+
 (function(module) {
   const showOne = {};
+
   showOne.initIndexPage = function() {
     $('.container').hide();
     $('.detail-view').show();
@@ -13,9 +16,14 @@ var app = app || {};
     let template = Handlebars.compile($('#show-one-template').text());
     $('.detail-view').append(template);
   };
+
+
   module.showOne = showOne;
 })(app);
+
+
 // $('#edit-name').val(thing.name);
+
 // $('#edit-page').off().on('click', 'button', () => {
 //   const name = $('#edit-name').val();
 //   thing.name = name;

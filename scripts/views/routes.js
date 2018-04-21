@@ -6,11 +6,12 @@ page('/*', (ctx, next) => {
 });
 
 page('/', app.bookView.initIndexPage);
+// page('/books/:book_id', app.showOne.initIndexPage);
 page('/new', app.formView.initIndexPage);
 page('/book-detail', (ctx) => {
   console.log('hello');
   app.Book.fetchOne(ctx.params.id)
-    .then(app.showOne.initIndexPage);
+    .then(app.showOne.initIndexPage)
 });
 
 page('/details/:id', (ctx) => {
