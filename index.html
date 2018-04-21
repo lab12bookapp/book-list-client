@@ -17,30 +17,28 @@
   </script>
 
   <script type="text/x-handlebars-template" id="book-list-template">
+    <section id="book-detail">
     <li class="book-items" data-bookid={{book_id}}>
       <div class="book-container">
-        <img src={{image_url}}>
+        <img src={{img_url}}>
         <div class="book-overlay">
           <h3>{{title}}</h3>
           <p>{{author}}</p>
         </div>
       </div>
-      <button><a href=/books/{{book_id}}>view details</a></button>
+      <button><a href=/details/{{book_id}}>view details</a></button>
     </li>
+  </section>
   </script>
 
-  <script type="text/x-handlebars-template" id="one-book-template">
-    <li class="one-book-item" data-bookid={{book_id}}>
-      <div class="one-book-container">
-        <img src={{image_url}}>
-        <div class="one-book-overlay">
-          <h3>{{title}}</h3>
-          <p>{{author}}</p>
-          <p>{{isbn}}</p>
-          <p>{{description}}</p>
-        </div>
+  <script type="text/x-handlebars-template" id="show-one-template">
+    <div data-bookid={{book_id}}>
+      <h1>{{title}}</h1>
+      <p>{{author}}</p>
+      <p>{{isbn}}</p>
+      <img src="{{img_url}}">
+      <p>{{description}}</p>
       </div>
-    </li>
   </script>
   
 </head>
@@ -82,8 +80,6 @@
           <input type="text" id="description" placeholder="description"><br>
         </form>
     </section>
-
-
   </main>
   <footer>
     <aside class="social-links">
@@ -98,10 +94,15 @@
   <!-- External CDN Resources -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 
   <!-- Application Resources -->
   <script src="./scripts/models/book.js" type="text/javascript"></script>
   <script src="./scripts/views/book-view.js" type="text/javascript"></script>
   <script src="./scripts/views/error-view.js" type="text/javascript"></script>
+  <script src="./scripts/views/form-view.js" type="text/javascript"></script>
+  <script src="./scripts/views/show-one.js" type="text/javascript"></script>
+  <script src="./scripts/views/routes.js" type="text/javascript"></script>
+
 </body>
 </html>
