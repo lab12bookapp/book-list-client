@@ -13,7 +13,7 @@ var app = app || {};
     $('#book-detail').off().on('click','button', ()=> {
       page('/book-detail')
     })
-    let template = Handlebars.compile($('#show-one-template').text());
+    let template = Handlebars.compile($('#book-list-template').text());
     $('.detail-view').append(template);
   };
 
