@@ -12,10 +12,10 @@ var app = app || {};
   };
 
   bookView.oneBook = (bookdata) => {
-
+    console.log('bookdata', bookdata);
     $('.container').hide();
     $('.detail-view').show();
-    let template = Handlebars.compile($('one-book-template').text());
+    let template = Handlebars.compile($('#show-one-template').text());
     $('.detail-view').append(template(bookdata));
   };
   module.bookView = bookView;

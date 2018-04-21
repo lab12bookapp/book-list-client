@@ -7,11 +7,18 @@ page('/*', (ctx, next) => {
 
 page('/', app.bookView.initIndexPage);
 page('/new', app.formView.initIndexPage);
-
-page('/details/:id', (ctx) => app.Books.fetchOne(ctx.params.id).then(bookdata) => {
-  app.bookView.oneBook(bookdata)
+page('/book-detail', (ctx) => {
+  console.log('hello');
+  app.Book.fetchOne(ctx.params.id)
+    .then(app.showOne.initIndexPage);
 });
+
+page('/details/:id', (ctx) => {
+  console.log(ctx.params.id);
+  app.Book.fetchOne(ctx.params.id)
+    .then((bookdata) => {
+      app.bookView.oneBook(bookdata);
+    });
 });
-
-
 page.start();
+
