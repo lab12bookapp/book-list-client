@@ -1,10 +1,11 @@
 body {
   background-color: #999;
-  font-family: 'helvetica';
+  /* font-family: 'helvetica'; */
   color: #ddd;
   width: 100%;
   position: relative;
   z-index:-1;
+  font-family: 'Montserrat', sans-serif;
 }
 
 main {
@@ -19,6 +20,7 @@ header {
   padding: 1.5vw 0;
   width: 100%;
   top: 0;
+  height: 95px;
 }
 
 footer {
