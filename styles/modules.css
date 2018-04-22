@@ -13,7 +13,7 @@
 }
 
 .book-container img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .book-items {
@@ -66,3 +66,4 @@
   font-size: 3vw;
   color: #d13227;
 }
+
