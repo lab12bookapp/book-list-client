@@ -5,6 +5,7 @@
 .view-title {
   width: 50%;
   margin: 0 auto;
+  text-decoration: underline;
 }
 
 .book-container {
@@ -13,7 +14,7 @@
 }
 
 .book-container img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .book-items {
@@ -32,6 +33,8 @@
   left: 0;
   right: 0;
   margin: auto;
+  margin-bottom: 20px;
+  
 }
 
 .book-overlay * {
@@ -65,4 +68,9 @@
 #error-message p {
   font-size: 3vw;
   color: #d13227;
+}
+
+
+#details-button{
+  margin-left: 65%;
 }
